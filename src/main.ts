@@ -82,6 +82,15 @@ class VoidCitadel {
     `;
     document.body.appendChild(this.instructionEl);
 
+    // 覆盖层点击时也触发指针锁定
+    this.instructionEl.addEventListener('click', () => {
+      this.controls.controls.lock();
+    });
+    this.instructionEl.addEventListener('touchstart', (event) => {
+      event.preventDefault();
+      this.controls.controls.lock();
+    }, { passive: false });
+
     // 状态信息
     this.statsEl = document.createElement('div');
     this.statsEl.id = 'stats';
