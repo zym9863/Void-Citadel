@@ -1,3 +1,5 @@
+**中文** | [English](README-EN.md)
+
 # 墟境 / Void Citadel
 
 递归虚空建筑与时空涟漪交互体验 - 一个基于 Three.js 的沉浸式 3D 探索项目。
