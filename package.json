@@ -16,5 +16,9 @@
     "overrides": {
       "vite": "npm:rolldown-vite@7.2.5"
     }
+  },
+  "dependencies": {
+    "@types/three": "^0.182.0",
+    "three": "^0.182.0"
   }
 }
