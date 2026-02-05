@@ -1,5 +1,6 @@
 import * as THREE from 'three';
-import { BuildingGenerator, BuildingType, BuildingConfig } from '../buildings/BuildingGenerator';
+import { BuildingGenerator } from '../buildings/BuildingGenerator';
+import type { BuildingConfig } from '../buildings/BuildingGenerator';
 import { PerlinNoise } from './PerlinNoise';
 
 /**

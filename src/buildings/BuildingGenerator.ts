@@ -1,14 +1,16 @@
 import * as THREE from 'three';
 
 /**
- * 建筑类型枚举
+ * 建筑类型常量
  */
-export enum BuildingType {
-    PAVILION = 'pavilion',     // 亭
-    TERRACE = 'terrace',       // 台
-    TOWER = 'tower',           // 楼
-    CHAMBER = 'chamber'        // 阁
-}
+export const BuildingType = {
+    PAVILION: 'pavilion',     // 亭
+    TERRACE: 'terrace',       // 台
+    TOWER: 'tower',           // 楼
+    CHAMBER: 'chamber'        // 阁
+} as const;
+
+export type BuildingType = typeof BuildingType[keyof typeof BuildingType];
 
 /**
  * 建筑配置接口
@@ -74,7 +76,7 @@ export class BuildingGenerator {
     /**
      * 创建亭子
      */
-    private static createPavilion(group: THREE.Group, config: BuildingConfig): void {
+    private static createPavilion(group: THREE.Group, _config: BuildingConfig): void {
         // 基座
         const baseGeom = new THREE.CylinderGeometry(3, 3.5, 0.5, 6);
         const base = new THREE.Mesh(baseGeom, this.BASE_MATERIAL);
@@ -114,7 +116,7 @@ export class BuildingGenerator {
     /**
      * 创建台
      */
-    private static createTerrace(group: THREE.Group, config: BuildingConfig): void {
+    private static createTerrace(group: THREE.Group, _config: BuildingConfig): void {
         // 多层平台
         const layers = 3;
         for (let i = 0; i < layers; i++) {
@@ -193,7 +195,7 @@ export class BuildingGenerator {
     /**
      * 创建阁
      */
-    private static createChamber(group: THREE.Group, config: BuildingConfig): void {
+    private static createChamber(group: THREE.Group, _config: BuildingConfig): void {
         // 八角形基座
         const baseGeom = new THREE.CylinderGeometry(4, 4.5, 1, 8);
         const base = new THREE.Mesh(baseGeom, this.BASE_MATERIAL);

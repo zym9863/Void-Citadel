@@ -34,7 +34,7 @@ export class VoidScene {
   /**
    * 更新场景状态
    */
-  update(deltaTime: number): void {
+  update(_deltaTime: number): void {
     // 可扩展：动态光照变化等
   }
 

@@ -1,5 +1,4 @@
 import * as THREE from 'three';
-import { PerlinNoise } from '../utils/PerlinNoise';
 
 /**
  * 时空涟漪效果
@@ -7,7 +6,6 @@ import { PerlinNoise } from '../utils/PerlinNoise';
  */
 export class TemporalRipple {
     private scene: THREE.Scene;
-    private noise: PerlinNoise;
     private time: number = 0;
 
     // 涟漪参数
@@ -24,8 +22,6 @@ export class TemporalRipple {
 
     constructor(scene: THREE.Scene) {
         this.scene = scene;
-        this.noise = new PerlinNoise(54321);
-
         // 创建时空涟漪着色器材质
         this.rippleMaterial = new THREE.ShaderMaterial({
             uniforms: {
